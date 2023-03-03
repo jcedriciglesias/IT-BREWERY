@@ -1,0 +1,95 @@
+body {
+	background-image: url('ph12.png');
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	flex-direction: column;
+}
+
+*{
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+form {
+	width: 500px;
+	height: 780px;
+	margin-left:60%;
+	border: 2px solid #ccc;
+	padding: 30px;
+	background: #fff;
+	border-radius: 15px;
+	font-size: 15px;
+
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+	font-size: 30px;
+}
+
+input {
+	display: block;
+	border: 2px solid black;
+	width: 95%;
+	padding: 10px;
+	margin: 10px auto;
+	border-radius: 5px;
+}
+label {
+	color: blue;
+	font-size: 30px;
+	padding: 10px;
+	font-family: cursive;
+}
+
+button {
+	float: right;
+	background: black;
+	padding: 10px 15px;
+	color: #fff;
+	border-radius: 5px;
+	margin-right: 10px;
+	border: none;
+	font-family: cursive;
+}
+button:hover{
+	opacity: .7;
+
+}
+.error {
+   background: blue;
+   color: white;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+.success {
+   background: #D4EDDA;
+   color: #40754C;
+   padding: 10px;
+   width: 95%;
+   border-radius: 5px;
+   margin: 20px auto;
+}
+
+h1 {
+	text-align: center;
+	color: #fff;
+}
+
+.ca {
+	font-size: 14px;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	color: black;
+}
+.ca:hover {
+	text-decoration: underline;
+} 

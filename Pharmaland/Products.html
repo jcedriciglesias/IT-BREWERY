@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<head>
+	<title>Pharmaland</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+
+.success {color: white;
+	border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+		body{
+			margin: 0px;
+			font-family: Arial;
+			background: no-repeat linear-gradient(rgba(0,0,0,.50) 50%, rgba(0,0,0,.50) 50%) , url("pharma.png");
+			background-size: cover;
+			background-position:center;
+			background-attachment: fixed;s
+			height: 100%;
+			width: 100%;
+		}
+
+
+		#Cart {
+			height: 5%;
+			width: 5%;
+			cursor: pointer;
+		}
+
+	#main-container{
+		border-radius: 10px;
+		margin: 4px;
+		float: left;
+  		width: 24.4%;
+		margin-top: 50px;
+		text-align: center;
+		color: white;
+		font-family: Arial;
+		font-size: 17px;
+		margin-top: 120px;
+	}
+	p{
+		text-align: left;
+		padding-left: 20px;
+	}
+	#myCart{
+		border-collapse: collapse;
+		text-align: center;
+		align-items: center;
+	}
+	#myCart tr td, th{
+		padding: 10px;
+		width: 200px;
+		position: relative;
+	}
+	#myCart tr th{
+		background-color: #0000fc;
+		color: aliceblue;
+	}
+	#myCart tr td{
+		text-align: left;
+	}
+	#myCart tr td.right{
+		text-align: right;
+	}
+	.add{
+		margin-top: 20px;
+	}
+	.subtotal{
+		font-weight: bold;
+	}
+	.modal-bg{
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 2000px;
+		width: 100%;
+		background-color:rgba(0, 0,0, 0.5);
+		visibility: hidden;
+		opacity: 0;
+		display: block;
+		align-content: center;
+		align-self: center;
+		transition:  visibility 0s opacity 0.5s;
+	}
+	h2{
+		font-size: 25px;
+		font-family: Arial;
+		font-style: oblique;
+	}
+	.bg-active{
+		visibility: visible;
+		opacity: 1;
+	}
+	.modal{
+		position:fixed;
+		background-color: white;
+		border-radius: 5px;
+		padding: 5px;
+		margin-top: 200px;
+		margin-left: 500px;
+		position: relative;
+		width: 500px;
+		height: auto;
+		display: flex;
+		justify-content: center;
+		align-self: center;
+	}
+	.modal-close{
+		position: absolute;
+		top:0;
+		font-size: 20px;
+		right: 10px;
+		font-family: Verdana, Geneva, Tahoma, sans-serif;
+		font-weight: bold;
+	}
+	
+	.removebtn{
+		font-weight: bold;
+		color: aliceblue;
+	}
+	.removebtn:hover{
+		font-weight: bold;
+		cursor: pointer;
+		color: red;
+	}
+	#cart-container h2{
+		font-family: Arial;
+		font-size: 40px;
+		font-style: inherit;
+		text-align: center;
+
+	}
+	#sms{
+		width: 50%;
+		border: 2px solid #aaa;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+	#sms:focus{
+	border-color: dodgerblue;
+	box-shadow: 0 0 8px 0 dodgerblue;	
+	
+	}
+	#address{
+		width: 50%;
+		border: 2px solid #aaa;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+	.form-modalshow{
+		visibility: visible;
+		position: relative;
+		justify-content: center;
+		background-color: rgba(0, 0, 0,0.5);
+		width: 100%;
+		height: 100%;
+	}
+	.form-modal{
+		top: 0;
+		align-self: center;
+		align-content: center;
+		visibility: visible;
+		position: relative;
+		display: block;
+		justify-content: center;
+		background-color: rgba(0, 0, 0,0.5);
+		width: 100%;
+		height: 100%;
+	}
+	.kape1 {
+  display: none;
+}
+.kape1show {
+  display: contents;
+}
+.Liempo {
+  display: none;
+}
+.Liemposhow {
+  display: contents;
+}
+.Sisig {
+  display: none;
+}
+.Sisigshow {
+  display: contents;
+}
+.RT {
+  display: none;
+}
+.RTshow {
+  display: contents;
+}
+.BS {
+  display: none;
+}
+.BSshow {
+  display: contents;
+}
+.DB {
+  display: none;
+}
+.DBshow {
+  display: contents;
+}
+.Dilis {
+  display: none;
+}
+.Dilisshow {
+  display: contents;
+}
+.Dell1{
+	display: none;
+}
+.Dell1show{
+	display: contents;
+}
+.Dell2{
+	display: none;
+}
+.Dell2show{
+	display: contents;
+}
+.Dell3{
+	display: none;
+}
+.Dell3show{
+	display: contents;
+}
+.Dell4{
+	display: none;
+}
+.Dell4show{
+	display: contents;
+}
+.Dell5{
+	display: none;
+}
+.Dell5show{
+	display: contents;
+}
+.Dell6{
+	display: none;
+}
+.Dell6show{
+	display: contents;
+}
+.Dell7{
+	display: none;
+}
+.Dell7show{
+	display: contents;
+}
+.Dell8{
+	display: none;
+}
+.Dell8show{
+	display: contents;
+}
+.Dell9{
+	display: none;
+}
+.Dell9show{
+	display: contents;
+}
+.Dell10{
+	display: none;
+}
+.Dell10show{
+	display: contents;
+}
+.Dell11{
+	display: none;
+}
+.Dell11show{
+	display: contents;
+}
+.Dell12{
+	display: none;
+}
+.Dell12show{
+	display: contents;
+}
+.Dell13{
+	display: none;
+}
+.Dell13show{
+	display: contents;
+}
+.Dell14{
+	display: none;
+}
+.Dell14show{
+display: contents;
+}
+.Dell15{
+	display: none;
+}
+.Dell15show{
+display: contents;
+}
+
+.container{
+	margin: auto;
+    background-color: #0000FE;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+h3{
+font-size: 16px;
+font-family: Arial;
+color: black;
+font-style: normal;
+background-color: #FFC107;
+padding-top: 2px;
+	
+}
+.container img{
+	height: 90%;
+	width: 90%;
+	border-radius: 5px;
+	border: 5px solid #FFC107 ;
+}
+
+.main-container{
+	height: 90vh;
+}
+input{
+	border:;
+
+}
+.modals {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.modal-contents {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 70rem;
+    border-radius: 0.5rem;
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+	
+	.label{
+		font-style: inherit;
+		background-color: blue;
+	}
+	.h4{
+		color: blue;
+	}
+	
+	</style>
+  	<link rel = "stylesheet" href="style1.css">
+	<link rel="shortcut icon" href="logo.png" type="image/jpeg"/>
+	<script src="jquery.js"></script>
+
+</head>
+<body>
+	<nav>
+
+		<div class="logo">
+			<img src="logo.png" width="120px" height="100px">
+		</div>
+
+		<ul class="nav-links">
+
+						<li><a href="home.html" >Home</a></li>
+                        <li><a href="Products.html">Product</a></li>
+                        <li><a href="About Us.html">About Us</a></li>
+                        <li><a href="Contact Us.html">Contact Us</a></li>
+		</ul>
+
+			<img id="Cart" src="cart.png"></button>
+
+			<div style="float:right">
+
+			<form action="logout.php"><button class="btn success">Log out</button></form>
+    </nav>
+
+	
+    <div id="main-container">
+		<div class="container">
+
+			<img src="Bearbrand.png" alt="">
+
+			<p class="item"><h3>Bearbrand</h3></p>		
+			
+				<p>•	320g net weight</p>
+				<p>•	Adult Milk	</p>
+				<p class="price">₱220.00 php</p>
+				Quantity:<input type="number" id="quantity1" value="1">
+			
+
+			<Button class="add" onclick="product1()">Add to Cart</Button>
+		
+		</div>
+	</div>	
+	
+	<div id="main-container">
+		<div class="container">
+
+			<img src="lactum1.jpg.png" alt="">
+
+			<p class="item"><h3>Lactum</h3></p>
+			<p>•	1 to 3 years old</p>
+				<p>• Net wt. 150g</p>
+			
+
+			<p class="price">₱200.00php</p>
+			Quantity:<input type="number" id="quantity2" value="1">
+			<Button class="add" onclick="product2()">Add to Cart</Button>
+		</div>
+	</div>	
+
+	<div id="main-container">
+
+		<div class="container">
+
+			<img src="nido.png" alt="">
+
+			<p class="item"><h3>Nido</h3></p>
+
+			<p>•	Net Wt. 2500g</p>
+			<p>•	kid/adult milk</p>
+			
+			<p class="price">₱750.00php</p>
+			Quantity:<input type="number" id="quantity3" value="1">
+			<Button class="add" onclick="product3()">Add to Cart</Button>
+
+		</div>
+	</div>	
+
+	<div id="main-container">
+		<div class="container">
+
+			<img src="nestogen.png" alt="">
+
+			<p class="item"><h3>Nestogen</h3></p>
+			<p>•	for 1 year old</p>
+			<p>•	Net Wt. 350g</p>   	
+
+
+			<p class="price">₱300.00 php</p>
+			Quantity:<input type="number" id="quantity4" value="1">
+			<Button class="add" onclick="product4()">Add to Cart</Button>
+			
+		</div>
+	</div>	
+
+	<div id="main-container">
+			<div class="container">
+					<img src="sustagen.png" alt="">
+				<p class="item"><h3>Sustagen</h3></p>
+			<p>•Size : 350g
+				<p>•	formulated milk for all adults.</p>   	
+</p>
+				<p class="price">₱566.00php</p>
+				Quantity:<input type="number" id="quantity5" value="1">
+				<Button class="add" onclick="product5()">Add to Cart</Button>
+			</div>
+		</div>	
+		
+		<div id="main-container">
+			<div class="container">
+					<img src="enfamil.png" alt="">
+				<p class="item"><h3>Enfamil</h3></p>
+			<p>•	59 ml
+				<p>•	For infant Baby</p>   	
+</p>
+				<p class="price">₱1250.00 php</p>
+				Quantity:<input type="number" id="quantity6" value="1">
+				<Button class="add" onclick="product6()">Add to Cart</Button>
+			</div>
+		</div>	
+
+		<div id="main-container">
+			<div class="container">
+						<img src="bonakid.png" alt="">
+				<p class="item"><h3>Bonakid</h3></p>
+			<p>•	Net Wt. 180g
+				<p>•	For 1 to 3 years old </p>   	
+</p>
+				<p class="price">₱150.00 php</p>
+				Quantity:<input type="number" id="quantity7" value="1">
+				<Button class="add" onclick="product7()">Add to Cart</Button>
+			</div>
+		</div>	
+		
+			<div id="main-container">
+			<div class="container">
+						<img src="bonna.png" alt="">
+				<p class="item"><h3>Bonna</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱830.00 php</p>
+				Quantity:<input type="number" id="quantity8" value="1">
+				<Button class="add" onclick="product8()">Add to Cart</Button>
+			</div>
+		</div>	
+
+		<div id="main-container">
+			<div class="container">
+					<img src="eq.png" alt="">
+				<p class="item"><h3>EQ</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱621.00 php</p>
+				Quantity:<input type="number" id="quantity9" value="1">
+				<Button class="add" onclick="product9()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="pampers.png" alt="">
+				<p class="item"><h3>Pampers</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱350.00 php</p>
+				Quantity:<input type="number" id="quantity10" value="1">
+				<Button class="add" onclick="product10()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="happy pants.png" alt="">
+				<p class="item"><h3>Happy Pants</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱250.00 php</p>
+				Quantity:<input type="number" id="quantity11" value="1">
+				<Button class="add" onclick="product11()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="caress.png" alt="">
+				<p class="item"><h3>Caress</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱300.00 php</p>
+				Quantity:<input type="number" id="quantity12" value="1">
+				<Button class="add" onclick="product12()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="pediasure.png" alt="">
+				<p class="item"><h3>Pediasure</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱700.00 php</p>
+				Quantity:<input type="number" id="quantity13" value="1">
+				<Button class="add" onclick="product13()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+				<img src="similac.png" alt="">
+				<p class="item"><h3>Similac</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱890.00 php</p>
+				Quantity:<input type="number" id="quantity14" value="1">
+				<Button class="add" onclick="product14()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="magic dri.png" alt="">
+				<p class="item"><h3>Magic Dri</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱220.00 php</p>
+				Quantity:<input type="number" id="quantity15" value="1">
+				<Button class="add" onclick="product15()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="ensure.png" alt="">
+				<p class="item"><h3>Ensure</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱760.00 php</p>
+				Quantity:<input type="number" id="quantity16" value="1">
+				<Button class="add" onclick="product16()">Add to Cart</Button>
+			</div>
+		</div>	
+
+		<div id="main-container">
+			<div class="container">
+					<img src="s-26.png" alt="">
+				<p class="item"><h3>S-26</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱2530.00 php</p>
+				Quantity:<input type="number" id="quantity17" value="1">
+				<Button class="add" onclick="product17()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="glucerna.png" alt="">
+				<p class="item"><h3>Glucerna</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱3500.00 php</p>
+				Quantity:<input type="number" id="quantity18" value="1">
+				<Button class="add" onclick="product18()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+						<img src="nan.png" alt="">
+				<p class="item"><h3>NAN Optipro</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱3500.00 php</p>
+				Quantity:<input type="number" id="quantity19" value="1">
+				<Button class="add" onclick="product19()">Add to Cart</Button>
+			</div>
+		</div>
+
+		<div id="main-container">
+			<div class="container">
+					<img src="jr.png" alt="">
+				<p class="item"><h3>Bearbrand Jr.</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱275.00 php</p>
+				Quantity:<input type="number" id="quantity20" value="1">
+				<Button class="add" onclick="product20()">Add to Cart</Button>
+			</div>
+		</div>
+
+		 <div id="main-container">
+		<div class="container">
+			<img src="cerelac.png" alt="">
+				<p class="item"><h3>Cerelac</h3></p>
+			<p>•	Hot Brusko
+				<p>•	All with cream tuff </p>   	
+</p>
+				<p class="price">₱100.00 php</p>
+			Quantity:<input type="number" id="quantity21" value="1">
+			<Button class="add" onclick="product21()">Add to Cart</Button>
+		</div>
+	</div>	
+
+
+	 <div id="main-container">
+		<div class="container">
+					<img src="enfagrow.png" alt="">
+				<p class="item"><h3>Enfagrow</h3></p>
+			<p>•	Vanilla Flavor
+				<p>•Net Wt.2.2kg</p>   	
+</p>
+				<p class="price">₱1700.00 php</p>
+			Quantity:<input type="number" id="quantity22" value="1">
+			<Button class="add" onclick="product22()">Add to Cart</Button>
+		</div>
+	</div>	
+
+
+ <div id="main-container">
+		<div class="container">
+					<img src="milo.png" alt="">
+				<p class="item"><h3>Milo</h3></p>
+			<p>•	Chocolate Drink
+				<p>•Net Wt.1kg</p>   	
+</p>
+				<p class="price">₱275.00 php</p>
+			Quantity:<input type="number" id="quantity22" value="1">
+			<Button class="add" onclick="product22()">Add to Cart</Button>
+		</div>
+	</div>	
+
+	 <div id="main-container">
+		<div class="container">
+				<img src="Nesquick.png" alt="">
+				<p class="item"><h3>Nesquick</h3></p>
+			<p>•	Chocolate Flavor
+				<p>•	Net Wt. 1.38kg</p>   	
+</p>
+				<p class="price">₱8900.00 php</p>
+			Quantity:<input type="number" id="quantity23" value="1">
+			<Button class="add" onclick="product23()">Add to Cart</Button>
+		</div>
+	</div>	
+					<!--Modal-->
+					<div class="modal-bg">
+						<div class="modal">
+				<div id="cart-container">
+					<div class="close-cart" id="open-cart">
+						<h2>My Cart</h2>
+						<table id="myCart">
+						  <tr class="title">
+							<th>Item Name</th>
+							<th>Qty</th>
+							<th>Price</th>
+							<th>Total</th>
+							<th></th>
+						  </tr>
+			
+						  <tr class="kape1" id="item1">
+							<th>Bearbrand</th>
+							<th><p class="qty1" id="qty1">0</p></th>
+							<th>&#8369; <span class="price1">220</span></th>
+							<th>&#8369; <span id="total1">0</span></th>
+							<th onclick="delete1()" class="removebtn">Remove</th>
+						  </tr>
+						</table>
+			
+						<table id="myCart">
+						  <tr class="Liempo" id="item2">
+							<th>Lactum</th>
+							<th><p class="qty2" id="qty2">0</p></th>
+							<th>&#8369; <span class="price2">₱200</span></th>
+							<th>&#8369; <span id="total2">0</span></th>
+							<th onclick="delete2()" class="removebtn">Remove</th>
+						  </tr>
+						</table>
+			
+						<table id="myCart">
+						  <tr class="Sisig" id="item3">
+							<th>Nido</th>
+							<th><p class="qty3" id="qty3">0</p></th>
+							<th>&#8369; <span class="price3">₱750</span></th>
+							<th>&#8369; <span id="total3">0</span></th>
+							<th onclick="delete3()" class="removebtn">Remove</th>
+						  </tr>
+						</table>
+						
+						<table id="myCart">
+							<tr class="RT" id="item4">
+							  <th>Nestogen</th>
+							  <th><p class="qty4" id="qty4">0</p></th>
+							  <th>&#8369; <span class="price4">₱300</span></th>
+							  <th>&#8369; <span id="total4">0</span></th>
+							  <th onclick="delete4()" class="removebtn">Remove</th>
+							</tr>
+						</table>
+						
+						<table id="myCart">
+								<tr class="BS" id="item5">
+								  <th>Sustagen</th>
+								  <th><p class="qty5" id="qty5">0</p></th>
+								  <th>&#8369; <span class="price5">₱566</span></th>
+								  <th>&#8369; <span id="total5">0</span></th>
+								  <th onclick="delete5()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="DB" id="item6">
+								  <th>Enfamil</th>
+								  <th><p class="qty6" id="qty6">0</p></th>
+								  <th>&#8369; <span class="price6">₱1250</span></th>
+								  <th>&#8369; <span id="total6">0</span></th>
+								  <th onclick="delete6()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dilis" id="item7">
+								  <th>Bonakid</th>
+								  <th><p class="qty7" id="qty7">0</p></th>
+								  <th>&#8369; <span class="price7">₱150</span></th>
+								  <th>&#8369; <span id="total7">0</span></th>
+								  <th onclick="delete7()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell1" id="item8">
+								  <th>Bonna</th>
+								  <th><p class="qty8" id="qty8">0</p></th>
+								  <th>&#8369; <span class="price8">₱830</span></th>
+								  <th>&#8369; <span id="total8">0</span></th>
+								  <th onclick="delete8()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell2" id="item9">
+								  <th>EQ Dry</th>
+								  <th><p class="qty9" id="qty9">0</p></th>
+								  <th>&#8369; <span class="price9">₱621</span></th>
+								  <th>&#8369; <span id="total9">0</span></th>
+								  <th onclick="delete9()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell3" id="item10">
+								  <th>Pampers</th>
+								  <th><p class="qty10" id="qty10">0</p></th>
+								  <th>&#8369; <span class="price10">₱350</span></th>
+								  <th>&#8369; <span id="total10">0</span></th>
+								  <th onclick="delete10()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell4" id="item11">
+								  <th>Happy Pants</th>
+								  <th><p class="qty11" id="qty11">0</p></th>
+								  <th>&#8369; <span class="price11">₱250</span></th>
+								  <th>&#8369; <span id="total11">0</span></th>
+								  <th onclick="delete11()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell5" id="item12">
+								  <th>Caress</th>
+								  <th><p class="qty12" id="qty12">0</p></th>
+								  <th>&#8369; <span class="price12">₱300</span></th>
+								  <th>&#8369; <span id="total12">0</span></th>
+								  <th onclick="delete12()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell6" id="item13">
+								  <th>Pediasure</th>
+								  <th><p class="qty13" id="qty13">0</p></th>
+								  <th>&#8369; <span class="price13">₱700</span></th>
+								  <th>&#8369; <span id="total13">0</span></th>
+								  <th onclick="delete13()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell7" id="item14">
+								  <th>Similac</th>
+								  <th><p class="qty14" id="qty14">0</p></th>
+								  <th>&#8369; <span class="price14">₱890</span></th>
+								  <th>&#8369; <span id="total14">0</span></th>
+								  <th onclick="delete14()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell8" id="item15">
+								  <th>Magic Dri</th>
+								  <th><p class="qty15" id="qty15">0</p></th>
+								  <th>&#8369; <span class="price15">₱220</span></th>
+								  <th>&#8369; <span id="total15">0</span></th>
+								  <th onclick="delete15()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell9" id="item16">
+								  <th>Ensure</th>
+								  <th><p class="qty16" id="qty16">0</p></th>
+								  <th>&#8369; <span class="price16">₱760</span></th>
+								  <th>&#8369; <span id="total16">0</span></th>
+								  <th onclick="delete16()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell10" id="item17">
+								  <th>S-26</th>
+								  <th><p class="qty17" id="qty17">0</p></th>
+								  <th>&#8369; <span class="price17">₱35</span></th>
+								  <th>&#8369; <span id="total17">0</span></th>
+								  <th onclick="delete17()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell11" id="item18">
+								  <th>Glucerna</th>
+								  <th><p class="qty18" id="qty18">0</p></th>
+								  <th>&#8369; <span class="price18">₱2530</span></th>
+								  <th>&#8369; <span id="total18">0</span></th>
+								  <th onclick="delete18()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell12" id="item19">
+								  <th>NAN Optipro</th>
+								  <th><p class="qty19" id="qty19">0</p></th>
+								  <th>&#8369; <span class="price19">₱3500</span></th>
+								  <th>&#8369; <span id="total19">0</span></th>
+								  <th onclick="delete19()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+								<tr class="Dell13" id="item20">
+								  <th>Bearbrand Jr.</th>
+								  <th><p class="qty20" id="qty20">0</p></th>
+								  <th>&#8369; <span class="price20">₱3500</span></th>
+								  <th>&#8369; <span id="total20">0</span></th>
+								  <th onclick="delete20()" class="removebtn">Remove</th>
+								</tr>
+							</table>
+
+							<table id="myCart">
+						  <tr class="Dell14" id="item21">
+							<th>Cerelac</th>
+							<th><p class="qty21" id="qty21">0</p></th>
+							<th>&#8369; <span class="price21">100</span></th>
+							<th>&#8369; <span id="tota21">0</span></th>
+							<th onclick="delete21()" class="removebtn">Remove</th>
+						  </tr>
+						</table>
+
+							<table id="myCart">
+						  <tr class="Dell15" id="item22">
+							<th>Enfagrow</th>
+							<th><p class="qty22" id="qty22">0</p></th>
+							<th>&#8369; <span class="price22">35</span></th>
+							<th>&#8369; <span id="tota22">380</span></th>
+							<th onclick="delete22()" class="removebtn">Remove</th>
+						  </tr>
+						</table>
+							
+
+						<h3 class="sub">
+						  Subtotal : &#8369;
+						  <span class="AmountTotal" id="AmountTotal">0</span>
+						</h3>
+						<button class="trigger" type="button" id="Check" >CheckOut</button>
+  						<div class="modals">
+    					<div class="modal-contents">
+						<span class="close-button">&times;</span>
+						<form>
+						<center><br><h4>Name:<br><input type="text" id="name"></h4></center>
+						<center><h4>Address:</h4><input type="text" id="add"></center>
+						<center><h4>Contact no.</h4><input type="tel " id="num">	</center>
+						<center><br><h4>Email:<br><input type="email" id="email"></h4></center>
+						<center><br><h4>Mode of Transaction:<br><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> Delivery and Home Setup</label><br>
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2"> Pick up</label><br>
+<input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+<label for="vehicle3"> Just Delivery</label><br></h4></center>
+	<center><br><h4>Mode of Payment<br><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+<label for="vehicle1"> GCASH</label><br>
+<input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+<label for="vehicle2"> COD</label><br>
+						<center><button><input onclick="Purchase()" type="button" value="Submit"><a href="home.php"></a></center>
+					</form>
+        
+    </div>
+</div>
+					<span class="modal-close">X</span>
+
+				</div>
+			</div>
+			</div>
+
+				<script src="script.js"></script>
+				<script>
+				 var modal = document.querySelector(".modals");
+                var trigger = document.querySelector(".trigger");
+                var closeButton = document.querySelector(".close-button");
+            
+                function toggleModal() {
+                    modal.classList.toggle("show-modal");
+                }
+            
+                function windowOnClick(event) {
+                    if (event.target === modal) {
+						toggleModal();
+                    }
+                }
+            
+                trigger.addEventListener("click", toggleModal);
+                closeButton.addEventListener("click", toggleModal);
+				window.addEventListener("click", windowOnClick);
+				
+				</script>
+    </body>
+    </html>

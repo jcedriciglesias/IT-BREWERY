@@ -1,0 +1,44 @@
+nav{
+	display: flex;
+	justify-content:space-around;
+	align-items: center;
+	background-color: #0000FE;
+	background-attachment: fixed;
+	line-height: 10px;
+	
+
+}
+.nav-links{
+	display: flex; 
+	justify-content: space-around;
+	width: 40%;
+	padding: 25px;
+	background-color: #FFC107;
+	border-radius: 5px;
+
+	
+}
+.nav-links li{
+	list-style: none;
+
+	
+
+}
+
+.active{
+	background-color: black;
+
+}
+.nav-links a{	
+	text-decoration: none;
+	letter-spacing:  1px;
+	font-weight: bold;
+	font-size: 23px;
+	color: black;
+	font-family: Arial;
+}
+
+.nav-links a:hover{
+	background: white;
+	
+	border-radius: 5px;

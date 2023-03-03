@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<head>
+	<title>Big Brew</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel = "stylesheet" href="style1.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/d3js/5.12.0/d3.min.js"></script>
+	<script src="jquery.js"></script>
+	<style>
+	body{
+			margin: 0px;
+			font-family: Arial;
+			background: white;
+			height: 100%;
+			width: 100%;
+		}
+
+	.txt{
+	font-size: 30px;
+	font-family: 'Times New Roman', Times, serif;
+	color: black;
+	padding: 20px;
+	text-align: center;
+	font-style: oblique;
+	font-display: none;
+	font-weight: 100;
+}
+.box{
+	padding: 5px;
+	margin: 5px;
+}
+.box p{
+	font-size: 25px;
+	color: black;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box h2{
+	font-size: 80px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	color: black;
+	text-align: center;
+}
+.box li{
+	list-style: none;
+	font-size: 20px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.box img{
+	border-radius: 30px;
+}
+ .hist{
+        text-align: center;
+    }
+    ul{
+    	font-size: 30px;
+    	font-weight: bold;
+    }
+    p{
+    	font-size: 30px;
+    	padding: 20px;
+    	background-color: #007bff;
+    	color: white;
+    	border-radius: 30px;
+    }
+	</style>
+	<link rel="shortcut icon" href="BigBrewph.png" type="image/jpeg"/>
+</head>
+<body>
+	<nav>
+		<div class="logo">
+			<img src="BigBrewph.png" width="250px" height="100px">
+
+		</div>
+		<ul class="nav-links">
+			<li><a href="home.php">Home</a></li>
+			<li><a href="Products.html">Product</a></li>
+			<li><a href="services.html">Services</a></li>
+			<li><a href="About Us.html">About Us</a></li>
+			<li><a href="Contact Us.html">Contact Us</a></li>
+		</ul>
+    </nav>
+    <div class="box">
+			 <div class="hist">
+              
+				
+				</div>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				
+				
+<script>
+	
+
+	/*
+$('#contact').submit(function(e){
+var name = document.getElementById("name");
+var email = document.getElementById("msil");
+
+
+if (name.value === "" || email.value === "") {
+	alert("Please check Entries");
+} else {
+	$.ajax({
+		url:"https://formspree.io/omengangeles27@gmail.com",
+		method: "POST",
+		data:$(this).serialize(),
+		dataType:"json"
+	});
+	e.preventDefault()
+	$(this).get(0).reset()
+	alert("Message sent!!!!");
+}
+});
+
+/*
+	var ajax = {
+		isSubmiting :false,
+		send:function(){
+
+			if (ajax.isSubmiting == false) {
+				ajax.isSubmiting = true;
+			
+			var email = $("input[name=name]").val();
+
+			if (email === "") {
+				alert("Form nolt Completed");
+			} else {
+
+
+				ajax.SetText("Sendingg...")
+				$.post("career.php", {
+					name: name
+				},function(data){
+					if (data === "true") {
+						ajax.SetText("Sent");
+					}
+					else{
+						ajax.SetText("Send mail!");
+						alert(data);
+					}
+					ajax.isSubmiting = false;
+				});
+			}
+		}
+		else{
+			alert("You can Only send");s
+		}
+		},
+		SetText: function(text){
+			$("input[type=button]").val(text);
+		}
+	}
+	*/
+</script>
+</body>
+</html>

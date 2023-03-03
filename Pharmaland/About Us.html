@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+	<title>Pharmaland</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+    <link rel = "stylesheet" href="style3.css">
+    <style>
+
+.success {color: white;
+	border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+    body{
+        
+			margin: 0px;
+			font-family: Arial;
+            background: #e9ebf0;
+			height: 100%;
+			width: 100%;
+		
+    }
+    P{
+        font-size: 25px;
+        font-family: Arial;
+        text-align: center;
+        color: black;
+        
+    }
+    h1{
+        font-family: Arial; 
+        text-align: center;
+        font-size: 30px;
+        color: black;
+    }
+    h4{
+        top: 0%;
+        font-size: 30px;
+        color: antiquewhite;
+        font-family: Arial;
+        font-style: normal;
+        letter-spacing: 2px;
+    }
+    #pro{
+        height: 20%;
+        width: 50%;
+        border-radius: 5px;
+        box-shadow: 0 04px 18px rgba(0, 0, 0,25), 0 5px 5px rgba(0,0,0, 0.12);
+        margin-top: 20px;
+    }
+    .hist{
+        text-align: center;
+    }
+    
+    .logo img{
+        border-radius: 40px;
+    }
+    </style>
+    <link rel="shortcut icon" href="logo.png" type="image/jpeg"/>
+</head>
+<body>
+	<nav>
+		<div class="logo">
+                <img src="logo.png" width="120px" height="100px">
+		</div>
+		<ul class="nav-links">
+			<li><a href="home.html">Home</a></li>
+			<li><a href="Products.html">Product</a></li>
+			<li><a href="About Us.html">About Us</a></li>
+			<li><a href="Contact Us.html">Contact Us</a></li>
+		</ul>
+        <div style="float:right">
+            <form action="logout.php"><button class="btn success">Log out</button></form>
+    </div>
+    </nav>
+        <div class="hist">
+              <img id="pro" name="slide" src=".jpg" style="width:20%; height: 20%">
+        </div>
+   <div class="txt">
+       <h1>About us</h1>
+    <p id="txt">
+       
+    </p>
+    <P>____________________________________________________________</P>
+    <h1>VISION - MISSION</h1>
+    <p id="txt">    We aim our company to be known as a Pharmacy with a highest  </p>
+    <p id="txt">    level of customer satisfaction and affordable price of medicines in  </p>
+    <p id="txt">    the Municipality where our Pharmacy is located.  </p>
+		<h1>I am HAPPY </h1>	
+		<h1>I am MOTIVATED</h1>	
+		<h1>I am POSITIVE</h1>	
+		<h1>I am BLESSED</h1>	
+   
+    
+</div>
+<footer id="foot"><img src="" ></footer>
+    <script>
+    var i = 0;
+    var images = [];
+    var time = 5000;
+
+    images[0]="pharmaland.png";
+    
+
+    function changeImage(){
+        document.slide.src = images[i];
+
+        if (i < images.length - 1) {
+            i++;
+        } else {
+            i = 0;
+        }
+        setTimeout("changeImage()",time);
+    }
+    window.onload = changeImage;
+    </script>
+</body>
+</html>
